@@ -35,6 +35,8 @@ namespace mission9_jacklin5
             services.AddScoped<IBookstoreRepository, EFBookStoreRepository>();
 
             services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +49,7 @@ namespace mission9_jacklin5
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
