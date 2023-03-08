@@ -17,8 +17,9 @@ namespace mission9_jacklin5.Pages
             repo = temp;
         }
         public Cart cart { get; set; }
-        public void OnGet()
+        public void OnGet(Cart c)
         {
+            cart = c;
         }
 
         public IActionResult OnPost(int bookID)
@@ -29,7 +30,7 @@ namespace mission9_jacklin5.Pages
 
             cart.AddItem(b, 1);
 
-            return RedirectToPage();
+            return RedirectToPage(cart);
         }
     }
 }
