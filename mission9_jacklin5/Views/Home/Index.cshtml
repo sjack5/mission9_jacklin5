@@ -6,26 +6,7 @@
 
 @foreach (Book b in Model.Books)
 {
-    <div class="card card-outline-primary m-1 p-1">
-        <div class="bg-faded p-1">
-            <h4>
-                @b.Title
-                <span class="badge badge-pill badge-primary bg-dark" style="float:right">
-                    <small>@b.Price.ToString("c")</small>
-                </span>
-            </h4>
-        </div>
-        <div class="card-text p-1">@b.Category</div>
-    </div>
-
-    <ul>
-        <li>Author: @b.Author</li>
-        <li>Publisher: @b.Publisher</li>            @*Lists information for each page, pulls from our queryable model*@
-        <li>ISBN: @b.ISBN</li>
-        <li>Classification: @b.Classification</li>
-        <li>PageCount: @b.PageCount</li>
-        <li>Price: $@b.Price</li>
-    </ul>
+    <partial name="BookSummary" model="b"></partial>
 }
 
 @*Creates Pagination for us*@
