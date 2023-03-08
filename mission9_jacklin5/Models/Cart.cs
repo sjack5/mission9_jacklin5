@@ -29,6 +29,13 @@ namespace mission9_jacklin5.Models
                 line.Quantity += qty;
             }
         }
+
+        public double CalculateTotal()
+        {
+            double sum = Items.Sum(x => x.Quantity * x.Book.Price);
+
+            return sum;
+        }
     }
 
     public class CartItem
