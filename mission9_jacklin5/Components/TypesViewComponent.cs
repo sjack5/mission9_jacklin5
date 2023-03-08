@@ -19,9 +19,9 @@ namespace mission9_jacklin5.Components
         public IViewComponentResult Invoke()
         {
             var types = repo.Books
-                .Select(x => x.Category)
-                .Distinct()
-                .OrderBy(x => x);
+            .Select(x => x.Category)
+            .Distinct()
+            .OrderBy(x => x);
 
             return View(types);
         }
