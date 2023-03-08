@@ -18,14 +18,12 @@ namespace mission9_jacklin5.Pages
             repo = temp;
         }
         public Cart cart { get; set; }
-        public string ReturnUrl { get; set; }
-        public void OnGet(string returnUrl)
+        public void OnGet()
         {
-            ReturnUrl = returnUrl ?? "/";
             cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
-        public IActionResult OnPost(int bookID, string returnUrl)
+        public IActionResult OnPost(int bookID)
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookID);
 
@@ -35,7 +33,7 @@ namespace mission9_jacklin5.Pages
 
             HttpContext.Session.SetJson("cart", cart);
 
-            return RedirectToPage(new { ReturnUrl = returnUrl });
+            return RedirectToPage(cart);
         }
     }
 }
