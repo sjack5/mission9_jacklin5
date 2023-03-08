@@ -30,7 +30,7 @@ namespace mission9_jacklin5.Controllers
 
                 PageInfo = new PageInfo     //Information needed to make our pages look right. Grab it from PageInfo ViewModels
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = (bookCategory == null ? repo.Books.Count() : repo.Books.Where(p=> p.Category == bookCategory).Count()),
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }

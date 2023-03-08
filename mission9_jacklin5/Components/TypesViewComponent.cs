@@ -18,6 +18,8 @@ namespace mission9_jacklin5.Components
 
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedCategory = RouteData?.Values["bookCategory"];
+
             var types = repo.Books
             .Select(x => x.Category)
             .Distinct()
