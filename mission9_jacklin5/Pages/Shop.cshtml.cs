@@ -12,5 +12,10 @@ namespace mission9_jacklin5.Pages
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+
+        }
     }
 }
