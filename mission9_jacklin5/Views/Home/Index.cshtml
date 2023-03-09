@@ -6,13 +6,13 @@
 
 @foreach (Book b in Model.Books)
 {
-    <partial name="BookSummary" model="b"></partial>
+    <partial name="BookSummary" model="b"></partial>        @*Let's us access our partial view*@
 }
 
 @*Creates Pagination for us*@
 <div page-blah="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-danger" class="btn-group pull-right m-1">
+     page-class-selected="btn-danger" class="btn-group pull-right m-1">     @*Changed btn to danger so it would be red*@
 </div>
 
   

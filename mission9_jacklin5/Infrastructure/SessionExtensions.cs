@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mission9_jacklin5.Infrastructure
 {
-    public static class SessionExtensions
+    public static class SessionExtensions           //Lets us have a session for the duration of the time that user wants to browse the website
     {
         public static void SetJson(this ISession session, string key, object value)
         {

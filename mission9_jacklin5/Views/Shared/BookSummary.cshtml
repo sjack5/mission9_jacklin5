@@ -8,7 +8,7 @@
                 <h4>
                     @Model.Title
                     <span class="badge badge-pill badge-primary bg-dark" style="float:right">
-                        <small>@Model.Price.ToString("c")</small>
+                        <small>@Model.Price.ToString("c")</small>       @*Puts praice for user to see in the upper right corner*@
                     </span>
                 </h4>
             </div>
@@ -30,7 +30,7 @@
                 <input type="hidden" name="returnURL" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
                 <span class="card-text">
-                    <button type="submit" class="btn btn-danger btn-sm float-end">Purchase</button>
+                    <button type="submit" class="btn btn-danger btn-sm float-end">Purchase</button>         @*Sends user to cart page*@
                 </span>
             </form>
         </div>

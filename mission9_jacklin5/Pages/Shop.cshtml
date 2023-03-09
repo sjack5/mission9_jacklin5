@@ -6,7 +6,7 @@
 <body class="bg-dark text-white">
     <h2>Your cart</h2>
 
-    <table class="table bg-light table-bordered table-striped">
+    <table class="table bg-light table-bordered table-striped">         @*View for what we want to show in our cart*@
 
         <thead>
             <tr>
@@ -21,7 +21,7 @@
             @foreach (var i in Model.cart.Items)
             {
                 <tr>
-                    <td>@i.Book.Title</td>
+                    <td>@i.Book.Title</td>                  @*Information found on each book*@
                     <td>@i.Quantity</td>
                     <td>@i.Book.Price</td>
                     <td>@(i.Quantity * i.Book.Price)</td>
@@ -32,7 +32,7 @@
         <tfoot>
             <tr>
                 <td colspan="3">Total:</td>
-                <td>@Model.cart.CalculateTotal().ToString("c")</td>
+                <td>@Model.cart.CalculateTotal().ToString("c")</td>         @*"c" makes it look like a currency*@
             </tr>
         </tfoot>
 
@@ -40,6 +40,6 @@
     </table>
 
     <div>
-        <a class="btn btn-outline-danger" href="@Model.ReturnUrl">Continue Shopping</a>
+        <a class="btn btn-outline-danger" href="@Model.ReturnUrl">Continue Shopping</a>     @*Way for them to return where they were shopping*@
     </div>
 </body>

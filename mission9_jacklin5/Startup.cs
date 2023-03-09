@@ -51,17 +51,17 @@ namespace mission9_jacklin5
             app.UseRouting();
             app.UseSession();
 
-            app.UseEndpoints(endpoints =>
-            {
+            app.UseEndpoints(endpoints =>           //Use endpoints to clean up url and direct people where they need to go
+            {                                   
                 
-                endpoints.MapControllerRoute("typepage", "{bookCategory}/Page{pageNum}", new { Controller = "Home", action = "Index" });
+                endpoints.MapControllerRoute("typepage", "{bookCategory}/Page{pageNum}", new { Controller = "Home", action = "Index" });    //If we are passed a bookcategory and a page num
 
-                endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute(           //If we're just passed a pagenu
                    name: "Paging",
                    pattern: "Page{pageNum}",
                    defaults: new { Controller = "Home", action = "Index", pageNum=1 });
 
-                endpoints.MapControllerRoute("type", "{bookCategory}", new { Controller = "Home", action = "Index", pageNum=1 });
+                endpoints.MapControllerRoute("type", "{bookCategory}", new { Controller = "Home", action = "Index", pageNum=1 });   //If we're passed only a category
 
                 endpoints.MapDefaultControllerRoute();          //Easier way to do MVC routing
 
