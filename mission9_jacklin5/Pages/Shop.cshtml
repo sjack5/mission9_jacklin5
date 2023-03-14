@@ -23,7 +23,7 @@
                 <tr>
                     <td>@i.Book.Title</td>                  @*Information found on each book*@
                     <td>@i.Quantity</td>
-                    <td>@i.Book.Price</td>
+                    <td>@(i.Book.Price.ToString("c"))</td>
                     <td>@(i.Quantity * i.Book.Price)</td>
                 </tr>
             }

@@ -37,6 +37,8 @@ namespace mission9_jacklin5
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Cart>(x => SessionCart.GetCart(x));  //When we see this we open the method we created in the SessionCart
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
