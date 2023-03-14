@@ -13,9 +13,11 @@ namespace mission9_jacklin5.Models
     {
         public static Cart GetCart(IServiceProvider services)
         {                                                                                                       //? means it is nullable
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;        //Pull infromation from the session
 
             SessionCart cart = session?.GetJson<SessionCart>("Cart") ?? new SessionCart();       //Checks if SessionCart already exists otherwise we create a new one. new means making new instance of a class
+
+            cart.Session = session; //Update Session information to be what we just pulled
 
             return cart;
         }

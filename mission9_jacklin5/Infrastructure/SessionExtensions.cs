@@ -11,7 +11,7 @@ namespace mission9_jacklin5.Infrastructure
     {
         public static void SetJson(this ISession session, string key, object value)
         {
-            session.SetString(key, JsonSerializer.Serialize(value));
+            session.SetString(key, JsonSerializer.Serialize(value));    //Serialize makes it a string value
         }
 
         public static T GetJson<T> (this ISession session, string key)
