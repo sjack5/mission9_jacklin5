@@ -33,6 +33,7 @@ namespace mission9_jacklin5
             });
 
             services.AddScoped<IBookstoreRepository, EFBookStoreRepository>();
+            services.AddScoped<IPaymentRepository, EFPaymentRepository>();
 
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
