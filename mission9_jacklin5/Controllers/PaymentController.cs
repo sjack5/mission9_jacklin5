@@ -9,9 +9,21 @@ namespace mission9_jacklin5.Controllers
 {
     public class PaymentController : Controller
     {
+        public PaymentController()      //Constructor
+        {
+
+        }
+
+        [HttpGet]
         public IActionResult Checkout()
         {
             return View(new Payment());
+        }
+
+        [HttpPost]
+        public IActionResult Checkout(Payment payment)
+        {
+
         }
     }
 }
