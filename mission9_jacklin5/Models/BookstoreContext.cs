@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace mission9_jacklin5.Models
 {
-    public partial class BookstoreContext : DbContext
+    public partial class BookstoreContext : DbContext       //Context file is link from our code to our database
     {
         public BookstoreContext()
         {
@@ -20,6 +20,6 @@ namespace mission9_jacklin5.Models
         }
 
         public DbSet<Book>Books { get; set; }       //Creates Books variable that we will use a lot later
-
+        public DbSet<Payment> Payments { get; set; }    //Allows us to make a table in the database callsed Payment and will allow us to store information found in our Payment model
     }
 }

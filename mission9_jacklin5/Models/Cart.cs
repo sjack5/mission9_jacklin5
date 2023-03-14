@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -50,6 +51,7 @@ namespace mission9_jacklin5.Models
 
     public class CartItem           //All the items that make up an individual book that gets added to the cart
     {
+        [Key]
         public int ItemId { get; set; }
         public Book Book { get; set; }      //Need this so we can get price
         public int Quantity { get; set; }
