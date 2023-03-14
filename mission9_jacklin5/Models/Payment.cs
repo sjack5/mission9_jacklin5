@@ -32,5 +32,10 @@ namespace mission9_jacklin5.Models
 
         public string Zip { get; set; }
 
+        [Required(ErrorMessage ="Please enter a Country")]
+        public string Country { get; set; }
+
+        public bool Anonymous { get; set; }
+
     }
 }
