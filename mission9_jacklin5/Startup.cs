@@ -39,6 +39,7 @@ namespace mission9_jacklin5
             services.AddSession();
 
             services.AddScoped<Cart>(x => SessionCart.GetCart(x));  //When we see this we open the method we created in the SessionCart
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();         //IHttpContextAccessor tells us information about the session of the HTML we are using
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
