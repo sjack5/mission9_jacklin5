@@ -9,6 +9,6 @@ namespace mission9_jacklin5.Models
     {
         IQueryable<Payment> Payments { get; }
 
-        void SavePayment(Payment payment);
+        void SavePayment(Payment payment);          //Used by the EFPaymentRepository
     }
 }

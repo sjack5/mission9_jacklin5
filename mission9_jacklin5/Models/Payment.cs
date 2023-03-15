@@ -14,7 +14,7 @@ namespace mission9_jacklin5.Models
         public int PaymentId { get; set; }
 
         [BindNever]
-        public ICollection<CartItem> cartItems { get; set; } 
+        public ICollection<CartItem> cartItems { get; set; }            //Model for our payments table
         
         [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
