@@ -24,6 +24,8 @@ namespace mission9_jacklin5.Models
             {
                 context.Payments.Add(payment);
             }
+
+            context.SaveChanges();
         }
     }
 }

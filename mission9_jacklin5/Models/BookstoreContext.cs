@@ -19,7 +19,7 @@ namespace mission9_jacklin5.Models
         {
         }
 
-        public DbSet<Book>Books { get; set; }       //Creates Books variable that we will use a lot later
-        public DbSet<Payment> Payments { get; set; }    //Allows us to make a table in the database callsed Payment and will allow us to store information found in our Payment model
+        public DbSet<Book> Books { get; set; }       //Creates Books variable that we will use a lot later
+        public DbSet<Payment> Payments { get; set; }    //Allows us to make a table in the database called Payment and will allow us to store information found in our Payment model
     }
 }

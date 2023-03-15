@@ -10,12 +10,12 @@ namespace mission9_jacklin5.Controllers
     public class PaymentController : Controller
     {
         private IPaymentRepository repo { get; set; }
-        private Cart cart { get; set; }
+        private Cart cart { get; set; }     //This brings in the session, this is why we added session material to the cart.cs file
 
         public PaymentController(IPaymentRepository temp, Cart c)      //Constructor
         {
             repo = temp;
-            cart = c;
+            cart = c;       
         }
 
         [HttpGet]
@@ -32,12 +32,12 @@ namespace mission9_jacklin5.Controllers
                 ModelState.AddModelError("", "Sorry, your cart is empty!");
             }
 
-            if(ModelState.IsValid)          //This means payment is real, it has a real PaymentID
+            if(ModelState.IsValid)          //This means payment is not empty, it is zero
             {
-                payment.cartItems = cart.Items.ToArray();
-                repo.SavePayment(payment);
+                payment.cartItems = cart.Items.ToArray();       //Stores items for us
+                repo.SavePayment(payment);      //Found in our EFPaymentRepository. If there is no PaymentId, it will add payment for us
                 cart.ClearCart();
-                return View();
+                return RedirectToPage("/PaymentConfirmation");
             }
             else
             {
